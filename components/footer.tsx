@@ -1,3 +1,5 @@
+import React from 'react'
+
 const Footer: React.FunctionComponent = () => (
   <footer>
     <h2>Footer</h2>
