@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from 'components/header'
 import Footer from 'components/footer'
+import { GetStaticProps } from 'next'
 
 const IndexPage: React.FunctionComponent = () => (
   <>
@@ -10,6 +11,6 @@ const IndexPage: React.FunctionComponent = () => (
   </>
 )
 
-export const getStaticProps = async () => ({ props: {} })
+export const getStaticProps: GetStaticProps = async () => ({ props: {} })
 
 export default IndexPage
