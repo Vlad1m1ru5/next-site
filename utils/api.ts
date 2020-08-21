@@ -1,6 +1,6 @@
 import { promises } from 'fs'
 
-export const getFiles = async (path = './'): Promise<Post[]> => {
+export const getAllPagesInfo = async (path = './_pages/'): Promise<PageInfo[]> => {
   const entries = await promises.readdir(path, { withFileTypes: true })
 
   const files = entries
@@ -10,7 +10,7 @@ export const getFiles = async (path = './'): Promise<Post[]> => {
   const folders = entries.filter(folder => folder.isDirectory())
 
   for (const folder of folders) {
-    files.push(...await getFiles(`${path}${folder.name}/`))
+    files.push(...await getAllPagesInfo(`${path}${folder.name}/`))
   }   
 
   return files
