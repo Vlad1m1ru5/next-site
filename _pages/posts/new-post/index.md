@@ -6,14 +6,18 @@ draft: true
 
 riiiiiii
 
-**Show .jpg image.**
-{{< figure src="./78809294.jpg" alt="Oh, no!" >}}
+## Show .jpg image
 
-**Show .svg image.**
-{{< figure src="./react.svg" alt="Oh, not again!" >}}
+![Яхта парус](./78809294.jpg)
 
-**Show .json download**
-{{< download "./some-content.json" "Json" >}}
+## Show .svg image
 
-**Show .json data**
-{{< preview "/posts/new-post/some-content.json" >}}
+![React Logo](./react.svg)
+
+## Show .json download
+
+[Скачать json](./some-content.json)
+
+## Show .json data
+
+{{./some-content.json}}
