@@ -1,4 +1,4 @@
-type PageInfo = {
+type Service = {
   path: string
   name: string
 }

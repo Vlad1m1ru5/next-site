@@ -1,13 +1,9 @@
 import React from 'react'
-import Header from 'layouts/header'
-import Footer from 'layouts/footer'
 import { GetStaticProps } from 'next'
 
 const IndexPage: React.FunctionComponent = () => (
   <>
-    <Header />
-    Hello its me
-    <Footer />
+    I see dead people
   </>
 )
 
