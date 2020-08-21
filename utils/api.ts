@@ -1,7 +1,7 @@
-import fs from 'fs'
+import { promises } from 'fs'
 
-export const getFiles = (path = './'): any[] => {
-  const entries = fs.readdirSync(path, { withFileTypes: true })
+export const getFiles = async (path = './'): Promise<Post[]> => {
+  const entries = await promises.readdir(path, { withFileTypes: true })
 
   const files = entries
     .filter(file => !file.isDirectory())
@@ -10,7 +10,7 @@ export const getFiles = (path = './'): any[] => {
   const folders = entries.filter(folder => folder.isDirectory())
 
   for (const folder of folders) {
-    files.push(...getFiles(`${path}${folder.name}/`))
+    files.push(...await getFiles(`${path}${folder.name}/`))
   }   
 
   return files

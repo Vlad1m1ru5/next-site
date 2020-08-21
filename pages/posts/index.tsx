@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 import { getFiles } from 'utils/api'
 
 interface IProps {
-  files: any[]
+  files: Post[]
 }
 
 const PostsPage: React.FunctionComponent<IProps> = ({ files }) => (
@@ -17,7 +17,7 @@ const PostsPage: React.FunctionComponent<IProps> = ({ files }) => (
 )
 
 export const getStaticProps: GetStaticProps = async () => {
-  const files = getFiles('./_pages/')
+  const files = await getFiles('./_pages/')
 
   return {
     props: {
